@@ -1,19 +1,6 @@
 import Fastify, { FastifyInstance } from 'fastify'
+import { userString, userObject } from './data'
 import { NestedNullableUser, NestedUser, NullableUser, User } from './schemas'
-
-const userString = {
-    id: 1,
-    name: 'Pablo',
-    created_at: '2022-01-11T19:11:47.000Z',
-    updated_at: '2022-01-11T19:11:47.000Z',
-};
-
-const userObject = {
-    id: 1,
-    name: 'Pablo',
-    created_at: (new Date()),
-    updated_at: '2022-01-11T19:11:47.000Z',
-}
 
 // routes
 

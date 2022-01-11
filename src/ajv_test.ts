@@ -1,5 +1,6 @@
 import addFormats from 'ajv-formats'
 import Ajv from 'ajv/dist/2019'
+import { userString, userObject } from './data'
 import { NestedNullableUser, NestedUser, NullableUser, User } from './schemas'
 
 const ajv = addFormats(new Ajv({}), [
@@ -18,20 +19,6 @@ const ajv = addFormats(new Ajv({}), [
     'relative-json-pointer',
     'regex'
 ]).addKeyword('kind').addKeyword('modifier')
-
-const userString = {
-    id: 1,
-    name: 'Pablo',
-    created_at: '2022-01-11T19:11:47.000Z',
-    updated_at: '2022-01-11T19:11:47.000Z',
-};
-
-const userObject = {
-    id: 1,
-    name: 'Pablo',
-    created_at: (new Date()),
-    updated_at: '2022-01-11T19:11:47.000Z',
-}
 
 // non nullable
 const validString = ajv.validate(User, userString)
